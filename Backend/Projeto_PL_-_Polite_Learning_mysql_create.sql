@@ -1,6 +1,6 @@
 CREATE TABLE `tb_post` (
 	`id` int(4) NOT NULL AUTO_INCREMENT,
-	`nome` varchar(255) NOT NULL,
+	`titulo` varchar(255) NOT NULL,
 	`conteudo` varchar(255) NOT NULL,
 	`data` DATE(255) NOT NULL,
 	`imagem` varchar(255) NOT NULL,
