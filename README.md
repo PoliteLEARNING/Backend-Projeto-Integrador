@@ -3,6 +3,8 @@
 Projeto do Bloco II do Bootcamp de Java da Generation Brasil. 🔶
 ------------------------
 
+Projeto do Bloco II relacionado com a ODS16.
+
 Qual foi a solução escolhida para contribuir com a ODS 16?
 - A solução escolhida foi a de criação de uma Rede Social.
 
