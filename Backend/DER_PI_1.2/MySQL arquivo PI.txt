@@ -20,9 +20,7 @@ CREATE TABLE `tb_tema` (
 	`id_tema` bigInt NOT NULL AUTO_INCREMENT,
 	`descricao` varchar(255) NOT NULL,
 	`imagem` varchar(255) NOT NULL,
-	`mais_procurado` varchar(255) NOT NULL,
-    `novidades_tema` varchar(255) NOT NULL,
-	`categoria_tema` varchar(255) NOT NULL,
+	`relacionados` varchar(255) NOT NULL,
 	PRIMARY KEY (`id_tema`)
 );
 
@@ -40,4 +38,4 @@ ALTER TABLE `tb_post` ADD CONSTRAINT `tb_post_fk0` FOREIGN KEY (`fk_tema`) REFER
 ALTER TABLE `tb_post` ADD CONSTRAINT `tb_post_fk1` FOREIGN KEY (`fk_usuario`) REFERENCES `tb_usuario`(`id_usuario`);
 
 
-select * from tb_post inner join tb_tema on tb_tema.id_tema = tb_post.fk_tema inner join tb_usuario on tb_usuario.id_usuario = tb_post.fk_usuario;
+select * from tb_post inner join tb_tema on tb_tema.id_tema = tb_post.fk_tema inner join tb_usuario on tb_usuario.id_usuario = tb_post.fk_usuario;usuario;
