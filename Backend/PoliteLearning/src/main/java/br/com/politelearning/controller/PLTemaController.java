@@ -29,7 +29,7 @@ public class PLTemaController {
 	private PLTemaRepository plTemaRepository;
 	
 	@GetMapping
-	public ResponseEntity<List<PLTemaModel>> getALL(){
+	public ResponseEntity<List<PLTemaModel>> getAll(){
 		return ResponseEntity.ok(plTemaRepository.findAll());
 
 	}

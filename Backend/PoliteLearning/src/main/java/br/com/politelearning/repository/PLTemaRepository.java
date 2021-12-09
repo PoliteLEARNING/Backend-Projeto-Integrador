@@ -8,6 +8,6 @@ import br.com.politelearning.model.PLTemaModel;
 
 public interface PLTemaRepository extends JpaRepository<PLTemaModel, Long> {
 	
-	public List<PLTemaModel> findAllbyPLTemaModelContainingIgnoreCase(String PLTemaModel);
+	public List<PLTemaModel> findAllByDescricaoContainingIgnoreCase(String descricao);
 
 }
