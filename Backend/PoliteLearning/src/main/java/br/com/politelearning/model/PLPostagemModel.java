@@ -39,6 +39,10 @@ public class PLPostagemModel {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private PLTemaModel tema;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private PLUsuarioModel usuario;
 
 	public long getId() {
 		return id;
@@ -86,6 +90,14 @@ public class PLPostagemModel {
 
 	public void setTema(PLTemaModel tema) {
 		this.tema = tema;
+	}
+
+	public PLUsuarioModel getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(PLUsuarioModel usuario) {
+		this.usuario = usuario;
 	}
 	
 	
