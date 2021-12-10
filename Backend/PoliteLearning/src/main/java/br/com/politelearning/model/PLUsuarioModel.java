@@ -26,7 +26,7 @@ public class PLUsuarioModel {
 	
 	@NotBlank
 	@Size(min = 3, max = 50, message= "É necessário colocar o nome")
-	private String nome_completo;
+	private String nome;
 	
 	@NotBlank
 	@Email //Verifica se o campo possui as características de um endereço de e-mail.
@@ -37,10 +37,10 @@ public class PLUsuarioModel {
 	@Size(min = 6, max = 8, message = "É necessario " )
 	private String senha;
 	
+	/*@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	private List<PLPostagemModel> postagem;
-
+		*/
 	public long getId_usuario() {
 		return id_usuario;
 	}
@@ -49,12 +49,12 @@ public class PLUsuarioModel {
 		this.id_usuario = id_usuario;
 	}
 
-	public String getNome_completo() {
-		return nome_completo;
+	public String getnome() {
+		return nome;
 	}
 
-	public void setNome_completo(String nome_completo) {
-		this.nome_completo = nome_completo;
+	public void setnome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getEmail() {
@@ -72,7 +72,7 @@ public class PLUsuarioModel {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
+	/*
 	public List<PLPostagemModel> getPostagem() {
 		return postagem;
 	}
@@ -80,7 +80,7 @@ public class PLUsuarioModel {
 	public void setPostagem(List<PLPostagemModel> postagem) {
 		this.postagem = postagem;
 	}
-	
+ 	*/	
 	
 	
 }
