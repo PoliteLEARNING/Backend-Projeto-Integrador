@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_usuario")
-public class PLUsuarioModel {
+public class UsuarioModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
