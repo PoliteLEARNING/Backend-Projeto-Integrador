@@ -3,12 +3,13 @@ package br.com.politelearning.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import br.com.politelearning.model.PLTemaModel;
-import br.com.politelearning.model.PLUsuarioModel;
 
-public interface PLTemaRepository extends JpaRepository<PLUsuarioModel, Long> {
+@Repository
+public interface PLTemaRepository extends JpaRepository<PLTemaModel, Long> {
 	
-	public List<PLUsuarioModel> findAllByNome_CompletoContainingIgnoreCase(String nome_completo);
+	public List<PLTemaModel> findAllByNomeContainingIgnoreCase(String nome);
 
 }
