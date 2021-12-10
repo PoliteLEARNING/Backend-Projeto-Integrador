@@ -14,54 +14,53 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import br.com.politelearning.model.PLPostagemModel;
-import br.com.politelearning.repository.PLPostagemRepository;
+import br.com.politelearning.model.PostagemModel;
+import br.com.politelearning.repository.PostagemRepository;
 
 @RestController
 @RequestMapping("/postagem")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class PLPostagemController {
+public class PostagemController {
 	
 	@Autowired
-	private PLPostagemRepository plPostagemRepository;
+	private PostagemRepository postagemRepository;
 	
 	@GetMapping //requisição de todas as postagens no banco de dados
-	public ResponseEntity<List<PLPostagemModel>> getAll(){
-		return ResponseEntity.ok(plPostagemRepository.findAll());
+	public ResponseEntity<List<PostagemModel>> getAll(){
+		return ResponseEntity.ok(postagemRepository.findAll());
 		
 	}
 	
 	@GetMapping("/{id}") //requisição das postagens a partir do id
-	public ResponseEntity<PLPostagemModel> getById(@PathVariable long id) {
-		return plPostagemRepository.findById(id)
+	public ResponseEntity<PostagemModel> getById(@PathVariable long id) {
+		return postagemRepository.findById(id)
 				.map(resposta -> ResponseEntity.ok(resposta))
 				.orElse(ResponseEntity.notFound().build());
 		
 	}
 	
 	@GetMapping("/titulo/{titulo}") //requisição das postagens a partir de um título
-	public ResponseEntity<List<PLPostagemModel>> getByTitulo(@PathVariable String titulo) {
-		return ResponseEntity.ok(plPostagemRepository.findAllByTituloContainingIgnoreCase(titulo));
+	public ResponseEntity<List<PostagemModel>> getByTitulo(@PathVariable String titulo) {
+		return ResponseEntity.ok(postagemRepository.findAllByTituloContainingIgnoreCase(titulo));
 		
 		
 	}
 	@PostMapping //Inserir uma nova postagem no banco de dados
-	public ResponseEntity<PLPostagemModel> postPLPostagemModel(@Valid @RequestBody PLPostagemModel postagem){
+	public ResponseEntity<PostagemModel> postPLPostagemModel(@Valid @RequestBody PostagemModel postagem){
 		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(plPostagemRepository.save(postagem));
+				.body(postagemRepository.save(postagem));
 	}
 	
 	@PutMapping //Atualizar uma postagem
-	public ResponseEntity<PLPostagemModel> putPLPostagemModel(@Valid @RequestBody PLPostagemModel postagem){
-		return ResponseEntity.ok(plPostagemRepository.save(postagem));
+	public ResponseEntity<PostagemModel> putPLPostagemModel(@Valid @RequestBody PostagemModel postagem){
+		return ResponseEntity.ok(postagemRepository.save(postagem));
 	}
 	
 	@DeleteMapping("/{id}") //deletar uma postagem
 	public ResponseEntity<?> deletePLPostagemModel(@PathVariable long id) {
-		
-		return plPostagemRepository.findById(id)
+		return postagemRepository.findById(id)
 				.map(resposta -> {
-						plPostagemRepository.deleteById(id);
+					postagemRepository.deleteById(id);
 						return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 						
 				})

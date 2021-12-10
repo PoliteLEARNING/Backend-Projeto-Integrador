@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity // Utilizada para informar que uma classe também é uma entidade.
 //Assim, a classe será uma entidade e terá uma tabela de mesmo nome no banco de dados.
 @Table(name = "tb_tema") // Possui atributos que possibilitam ao desenvolvedor sobrescrever.
-public class PLTemaModel {
+public class TemaModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,7 +37,7 @@ public class PLTemaModel {
 	
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tema")
-	private List<PLPostagemModel> postagem;
+	private List<PostagemModel> postagem;
 	
 	
 
