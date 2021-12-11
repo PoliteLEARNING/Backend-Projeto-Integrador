@@ -24,44 +24,48 @@ import br.com.politelearning.repository.TemaRepository;
 @RequestMapping("/temas")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TemaController {
-	
+
 	@Autowired
 	private TemaRepository temaRepository;
-	
+
 	@GetMapping
-	public ResponseEntity<List<TemaModel>> getAll(){
+	public ResponseEntity<List<TemaModel>> getAll() {
 		return ResponseEntity.ok(temaRepository.findAll());
 
 	}
-	
+
 	@GetMapping("/{id}")
 	public ResponseEntity<TemaModel> getById(@PathVariable long id) {
-		return temaRepository.findById(id)
-				.map(resposta -> ResponseEntity.ok(resposta))
+		return temaRepository.findById(id).map(resposta -> ResponseEntity.ok(resposta))
 				.orElse(ResponseEntity.notFound().build());
-		
+
 	}
-	
+
+	// requisição das postagens a partir de um título
+	@GetMapping("/descricao/{descricao}")
+	public ResponseEntity<List<TemaModel>> getByTitulo(@PathVariable String descricao) {
+		return ResponseEntity.ok(temaRepository.findAllByDescricaoContainingIgnoreCase(descricao));
+
+	}
+
 	@PostMapping
-	public ResponseEntity<TemaModel> postPLTemaModel(@Valid @RequestBody TemaModel tema){
-		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(temaRepository.save(tema));
+	public ResponseEntity<TemaModel> postPLTemaModel(@Valid @RequestBody TemaModel tema) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(temaRepository.save(tema));
 	}
-	
-	@PutMapping
-	public ResponseEntity<TemaModel> putPLTemaModel(@Valid @RequestBody TemaModel tema) {
-		return ResponseEntity.ok(temaRepository.save(tema));
-		
+
+	@PutMapping // Atualizar uma postagem
+	public ResponseEntity<TemaModel> putPostagemModel(@Valid @RequestBody TemaModel tema) {
+		return temaRepository.findById(tema.getId()).map(resposta -> {
+			return ResponseEntity.ok().body(temaRepository.save(tema));
+		}).orElse(ResponseEntity.notFound().build());
 	}
-	
+
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deleteRepository(@PathVariable long id) {
-		return temaRepository.findById(id)
-				.map(resposta -> {
-					temaRepository.deleteById(id);
-					return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-				})
-				.orElse(ResponseEntity.notFound().build());
+		return temaRepository.findById(id).map(resposta -> {
+			temaRepository.deleteById(id);
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+		}).orElse(ResponseEntity.notFound().build());
 	}
 
 }
