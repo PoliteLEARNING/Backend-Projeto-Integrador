@@ -15,6 +15,7 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties({ "usuario" })
 @Entity
 @Table(name = "tb_postagem")
 public class PostagemModel {
@@ -22,24 +23,28 @@ public class PostagemModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@NotBlank(message = "O atributo título é obrigatório!")
 	@Size(min = 3, max = 70, message = "O atributo título deve conter no mínimo 3 caracteres e no máximo 50.")
 	private String titulo;
-	
+
 	@NotBlank(message = "O atributo conteúdo é obrigatório!")
 	@Size(min = 10, max = 1000, message = "O atributo conteúdo deve conter no mínimo 10 caracteres e no máximo 255.")
 	private String conteudo;
-	
-	private String imagem; // Conteúdo de Imagem é opcional, o usuário não precisa necessariamente colocar algo nesta variável.
-	
+
+	/*
+	 * Conteúdo de Imagem é opcional, o usuário não precisa necessariamente colocar
+	 * algo nesta variável.
+	 */
+	private String imagem;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data = new java.sql.Date(System.currentTimeMillis());
-	
+
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private TemaModel tema;
-	
+
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private UsuarioModel usuario;
@@ -99,6 +104,5 @@ public class PostagemModel {
 	public void setUsuario(UsuarioModel usuario) {
 		this.usuario = usuario;
 	}
-	
-	
+
 }
