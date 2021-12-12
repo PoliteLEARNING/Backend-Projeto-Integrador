@@ -25,13 +25,13 @@ public class TemaModel {
 	private long id;
 	
 	@NotBlank(message = "O atributo descrição não pode estar vazio e deve ter um mínimo de 5 caracteres e no máximo 1000 caracteres")
-	@Size(min = 5, max = 1000)
+	@Size(min = 5, max = 1000) 
 	private String descricao;
 	
 	
 	private String imagem;// imagem relacionada ao tema, não obrigatório
 
-	@NotNull
+	@NotNull (message = "Não pode estar vazio e deve ter um mínimo de 2 caracteres e no máximo 30")
 	@Size(min = 2, max = 30)
 	private String relacionados;// temas relacionados ao tema em questão postado pelo usuário (Seria o nosso Hashtag)
 	
