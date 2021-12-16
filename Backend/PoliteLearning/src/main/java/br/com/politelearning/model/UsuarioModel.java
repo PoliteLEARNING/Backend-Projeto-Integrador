@@ -31,7 +31,7 @@ public class UsuarioModel {
 	@NotBlank(message = "O campo não deve conter valor nulo ou espaço vazio ")
 	@Email // Verifica se o campo possui as características de um endereço de e-mail.
 	@Size(min = 3, max = 50, message = "É necessário colocar um email no min 3 e max 50")
-	private String email;
+	private String usuario;
 
 	@NotBlank(message = "O campo não deve conter valor nulo ou espaço vazio ")
 	@Size(min = 6, max = 8, message = "É necessario colocar uma senha no min 6 e max 8 ")
@@ -59,12 +59,12 @@ public class UsuarioModel {
 		this.nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getSenha() {
@@ -74,7 +74,6 @@ public class UsuarioModel {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
 
 	public String getFoto() {
 		return foto;
@@ -92,4 +91,5 @@ public class UsuarioModel {
 		this.postagem = postagem;
 	}
 
+	
 }
