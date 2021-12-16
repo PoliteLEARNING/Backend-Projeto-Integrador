@@ -34,7 +34,7 @@ public class UsuarioModel {
 	private String usuario;
 
 	@NotBlank(message = "O campo não deve conter valor nulo ou espaço vazio ")
-	@Size(min = 6, max = 8, message = "É necessario colocar uma senha no min 6 e max 8 ")
+	@Size(min = 6, message = "É necessario colocar uma senha no min 6")
 	private String senha;
 	
 	private String foto;
