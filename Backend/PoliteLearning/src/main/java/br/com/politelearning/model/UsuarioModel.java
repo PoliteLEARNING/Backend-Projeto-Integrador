@@ -36,6 +36,8 @@ public class UsuarioModel {
 	@NotBlank(message = "O campo não deve conter valor nulo ou espaço vazio ")
 	@Size(min = 6, max = 8, message = "É necessario colocar uma senha no min 6 e max 8 ")
 	private String senha;
+	
+	private String foto;
 
 	@JsonIgnoreProperties("usuario")
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -71,6 +73,15 @@ public class UsuarioModel {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public List<PostagemModel> getPostagem() {
