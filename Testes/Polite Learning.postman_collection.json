@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "97279c2f-b270-49cf-937e-531c2a6550c6",
+		"name": "Polite Learning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PostCadastro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Gerson\",\r\n    \"usuario\": \"gersonespejo125@gmail.com\",\r\n    \"senha\": \"12345678\",\r\n    \"foto\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"gersonespejo125@gmail.com\",\r\n    \"senha\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/logar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"logar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllTema",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Z2Vyc29uZXNwZWpvMTI1QGdtYWlsLmNvbToxMjM0NTY3OA==",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Z2Vyc29uZXNwZWpvMTI1QGdtYWlsLmNvbToxMjM0NTY3OA==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/temas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"temas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllPostagens",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Z2Vyc29uZXNwZWpvMTI1QGdtYWlsLmNvbToxMjM0NTY3OA==",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Z2Vyc29uZXNwZWpvMTI1QGdtYWlsLmNvbToxMjM0NTY3OA==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/postagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"postagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostTema",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorizationau",
+						"value": "Basic Z2Vyc29uZXNwZWpvMTI1QGdtYWlsLmNvbToxMjM0NTY3OA==",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Z2Vyc29uZXNwZWpvMTI1QGdtYWlsLmNvbToxMjM0NTY3OA==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descricao\" : \"Atividade de recreação para o horário de almoço\",\r\n    \"imagem\": \"N/A\",\r\n    \"relacionados\": \"#Saúde #Agitação\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/temas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"temas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostPostagens",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Z2Vyc29uZXNwZWpvMTI1QGdtYWlsLmNvbToxMjM0NTY3OA==",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Z2Vyc29uZXNwZWpvMTI1QGdtYWlsLmNvbToxMjM0NTY3OA==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Recreação durante o almoço\",\r\n    \"conteudo\": \"Um método incrivel para deixar o seu almoço mais divertido\",\r\n    \"imagem\": \"\",\r\n    \"tema\": {\r\n        \"id\": \"1\"\r\n    },\r\n    \"usuarios\": {\r\n        \"id\":\"1\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/postagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"postagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutTema",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"descricao\": \"Educação infantil durante o período da Primeira Guerra\",\r\n    \"imagem\": \"https://www.sohistoria.com.br/ef2/primeiraguerra/index_clip_image002.jpg\",\r\n    \"relacionados\": \"#História  #GasparBisco\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/temas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"temas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutPostagens",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Z2Vyc29uZXNwZWpvMTI1QGdtYWlsLmNvbToxMjM0NTY3OA==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"10\",\r\n    \"titulo\": \"A educação durante a primeira Guerra Mundial\",\r\n    \"conteudo\": \"Durante o periodo de Guerra a educação foi deixado de lado\",\r\n    \"imagem\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/postagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"postagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTemasID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/temas/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"temas",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostagensID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/postagens/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"postagens",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostagensTitulo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/postagens/titulo/{titulo}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"postagens",
+						"titulo",
+						"{titulo}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTemasDescricao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/temas/descricao/{descricao}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"temas",
+						"descricao",
+						"{descricao}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTemaID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/temas/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"temas",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePostagensID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/postagens/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"postagens",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
