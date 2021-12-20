@@ -15,9 +15,8 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity // Utilizada para informar que uma classe também é uma entidade.
-//Assim, a classe será uma entidade e terá uma tabela de mesmo nome no banco de dados.
-@Table(name = "tb_tema") // Possui atributos que possibilitam ao desenvolvedor sobrescrever.
+@Entity 
+@Table(name = "tb_tema") 
 public class TemaModel {
 	
 	@Id
@@ -29,11 +28,11 @@ public class TemaModel {
 	private String descricao;
 	
 	
-	private String imagem;// imagem relacionada ao tema, não obrigatório
+	private String imagem;
 
 	@NotNull (message = "Não pode estar vazio e deve ter um mínimo de 2 caracteres e no máximo 30")
 	@Size(min = 2, max = 30)
-	private String relacionados;// temas relacionados ao tema em questão postado pelo usuário (Seria o nosso Hashtag)
+	private String relacionados;
 	
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tema")
