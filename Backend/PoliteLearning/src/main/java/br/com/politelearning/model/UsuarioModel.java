@@ -11,10 +11,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 
 @Entity
 @Table(name = "tb_usuario")
@@ -28,15 +30,15 @@ public class UsuarioModel {
 	@Size(min = 3, max = 50, message = "É necessário colocar o nome min 3 e max 50")
 	private String nome;
 
-	@NotBlank(message = "O campo não deve conter valor nulo ou espaço vazio ")
+	@Schema(example = "email@email.com.br")
+	@NotNull(message = "O campo não deve conter valor nulo ou espaço vazio ")
 	@Email // Verifica se o campo possui as características de um endereço de e-mail.
-	@Size(min = 3, max = 50, message = "É necessário colocar um email no min 3 e max 50")
 	private String usuario;
 
 	@NotBlank(message = "O campo não deve conter valor nulo ou espaço vazio ")
 	@Size(min = 6, message = "É necessario colocar uma senha no min 6")
 	private String senha;
-	
+
 	private String foto;
 
 	@JsonIgnoreProperties("usuario")
@@ -91,5 +93,4 @@ public class UsuarioModel {
 		this.postagem = postagem;
 	}
 
-	
 }
