@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import br.com.politelearning.model.UsuarioModel;
 
-// Descreve todas as caracteristicas do usuario para o Spring Security
+
 public class UserDetailsImpl implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
@@ -24,7 +24,7 @@ public class UserDetailsImpl implements UserDetails {
 		// TODO Auto-generated method stub
 		return null;
 	}
-     // O ele vai sobrescrever autorizações em relação a conta do usuario
+  
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub

@@ -2,7 +2,6 @@ package br.com.politelearning.model;
 
 public class UserLoginModel {
 	
-	//Apoio a Model Usuario 
 
 	private long id;
 	

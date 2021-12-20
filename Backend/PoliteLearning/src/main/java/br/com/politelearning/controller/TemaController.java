@@ -41,7 +41,7 @@ public class TemaController {
 
 	}
 
-	// requisição das postagens a partir de um título
+	
 	@GetMapping("/descricao/{descricao}")
 	public ResponseEntity<List<TemaModel>> getByTitulo(@PathVariable String descricao) {
 		return ResponseEntity.ok(temaRepository.findAllByDescricaoContainingIgnoreCase(descricao));
@@ -53,7 +53,7 @@ public class TemaController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(temaRepository.save(tema));
 	}
 
-	@PutMapping // Atualizar uma postagem
+	@PutMapping 
 	public ResponseEntity<TemaModel> putPostagemModel(@Valid @RequestBody TemaModel tema) {
 		return temaRepository.findById(tema.getId()).map(resposta -> {
 			return ResponseEntity.ok().body(temaRepository.save(tema));

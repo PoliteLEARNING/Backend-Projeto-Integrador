@@ -32,7 +32,7 @@ public class UsuarioModel {
 
 	@Schema(example = "email@email.com.br")
 	@NotNull(message = "O campo não deve conter valor nulo ou espaço vazio ")
-	@Email // Verifica se o campo possui as características de um endereço de e-mail.
+	@Email 
 	private String usuario;
 
 	@NotBlank(message = "O campo não deve conter valor nulo ou espaço vazio ")

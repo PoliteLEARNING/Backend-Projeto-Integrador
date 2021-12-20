@@ -32,10 +32,7 @@ public class PostagemModel {
 	@Size(min = 10, max = 1000, message = "O atributo conteúdo deve conter no mínimo 10 caracteres e no máximo 255.")
 	private String conteudo;
 
-	/*
-	 * Conteúdo de Imagem é opcional, o usuário não precisa necessariamente colocar
-	 * algo nesta variável.
-	 */
+
 	private String imagem;
 
 	@Temporal(TemporalType.TIMESTAMP)
