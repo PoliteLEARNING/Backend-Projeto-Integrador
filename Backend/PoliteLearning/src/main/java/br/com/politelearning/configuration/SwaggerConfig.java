@@ -21,7 +21,7 @@ public class SwaggerConfig {
 		return new OpenAPI()
 				.info(new Info().title("Polite Learning").description("Projeto Integrador  - Generation Brasil")
 						.version("v0.0.1").license(new License().name("generation.org.br").url("http://springdoc.org"))
-						.contact(new Contact().name("Gabriel Costa Silva")
+						.contact(new Contact().name("Polite Learning")
 								.url("https://github.com/PoliteLEARNING/Projeto-Integrador-Grupo-02")
 								.email("grupo2turma39pi@gmail.com")))
 				.externalDocs(new ExternalDocumentation().description("Github")
