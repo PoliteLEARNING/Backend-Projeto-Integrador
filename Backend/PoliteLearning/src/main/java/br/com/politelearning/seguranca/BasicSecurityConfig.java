@@ -44,7 +44,6 @@ WebSecurityConfigurerAdapter {
 	http.authorizeRequests()
 	.antMatchers("/usuarios/logar").permitAll()
 	.antMatchers("/usuarios/cadastrar").permitAll()
-	.antMatchers(HttpMethod.OPTIONS).permitAll()
 	.anyRequest().authenticated()
 	.and().httpBasic()
 	.and().sessionManagement().sessionCreationPolicy
