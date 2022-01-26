@@ -32,17 +32,20 @@ public class UsuarioModel {
 
 	@Schema(example = "email@email.com.br")
 	@NotNull(message = "O campo não deve conter valor nulo ou espaço vazio ")
-	@Email 
+	@Email
 	private String usuario;
 
 	@NotBlank(message = "O campo não deve conter valor nulo ou espaço vazio ")
 	@Size(min = 6, message = "É necessario colocar uma senha no min 6")
 	private String senha;
 
+	
 	private String foto;
 
+	private String tipo;
+
 	@JsonIgnoreProperties("usuario")
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	private List<PostagemModel> postagem;
 
 	public long getId() {
@@ -83,6 +86,14 @@ public class UsuarioModel {
 
 	public void setFoto(String foto) {
 		this.foto = foto;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public List<PostagemModel> getPostagem() {
