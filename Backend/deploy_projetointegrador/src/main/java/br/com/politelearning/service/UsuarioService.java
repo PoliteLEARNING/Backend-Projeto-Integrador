@@ -16,7 +16,7 @@ import br.com.politelearning.repository.UsuarioRepository;
 
 @Service 
 public class UsuarioService {
-	
+
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
@@ -60,9 +60,9 @@ public class UsuarioService {
 
 				usuarioLogin.get().setId(usuario.get().getId());				
 				usuarioLogin.get().setNome(usuario.get().getNome());
-				usuarioLogin.get().setSenha(usuario.get().getSenha());
 				usuarioLogin.get().setToken(gerarBasicToken(usuarioLogin.get().getUsuario(), usuarioLogin.get().getSenha()));
-
+				usuarioLogin.get().setFoto(usuario.get().getFoto());
+				usuarioLogin.get().setTipo(usuario.get().getTipo());
 				return usuarioLogin;
 
 			}
@@ -95,5 +95,4 @@ public class UsuarioService {
 		return "Basic " + new String(tokenBase64);
 
 	}
-
 }

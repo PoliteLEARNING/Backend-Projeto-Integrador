@@ -38,18 +38,18 @@ public class PostagemController {
 
 	}
 
-	@GetMapping("/titulo/{titulo}") 
+	@GetMapping("/titulo/{titulo}")
 	public ResponseEntity<List<PostagemModel>> getByTitulo(@PathVariable String titulo) {
 		return ResponseEntity.ok(postagemRepository.findAllByTituloContainingIgnoreCase(titulo));
 
 	}
 
-	@PostMapping 
+	@PostMapping
 	public ResponseEntity<PostagemModel> postPostagemModel(@Valid @RequestBody PostagemModel postagem) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagem));
 	}
 
-	@PutMapping 
+	@PutMapping
 	public ResponseEntity<PostagemModel> putPostagemModel(@Valid @RequestBody PostagemModel postagem) {
 		return postagemRepository.findById(postagem.getId()).map(resposta -> {
 			return ResponseEntity.ok().body(postagemRepository.save(postagem));

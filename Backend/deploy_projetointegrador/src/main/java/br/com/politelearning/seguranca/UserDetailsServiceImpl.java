@@ -12,9 +12,8 @@ import br.com.politelearning.model.UsuarioModel;
 import br.com.politelearning.repository.UsuarioRepository;
 
 @Service 
-
 public class UserDetailsServiceImpl implements UserDetailsService {
-
+	
 	@Autowired
 	private UsuarioRepository userRepository;
 
