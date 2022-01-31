@@ -30,7 +30,6 @@ public class TemaModel {
 	
 	private String imagem;
 
-	@NotNull (message = "Não pode estar vazio e deve ter um mínimo de 2 caracteres e no máximo 30")
 	@Size(min = 2, max = 30)
 	private String relacionados;
 	
