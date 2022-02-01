@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -36,8 +35,6 @@ public class TemaModel {
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tema")
 	private List<PostagemModel> postagem;
-	
-	
 
 	public long getId() {
 		return id;
@@ -54,7 +51,7 @@ public class TemaModel {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
+
 	public String getImagem() {
 		return imagem;
 	}
@@ -62,12 +59,21 @@ public class TemaModel {
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
 	}
+
 	public String getRelacionados() {
 		return relacionados;
 	}
 
 	public void setRelacionados(String relacionados) {
 		this.relacionados = relacionados;
+	}
+
+	public List<PostagemModel> getPostagem() {
+		return postagem;
+	}
+
+	public void setPostagem(List<PostagemModel> postagem) {
+		this.postagem = postagem;
 	}
 	
 }
