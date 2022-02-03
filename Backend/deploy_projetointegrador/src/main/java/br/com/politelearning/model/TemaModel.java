@@ -26,13 +26,13 @@ public class TemaModel {
 	@Size(min = 5, max = 1000) 
 	private String descricao;
 	
-	
+	@Size(min = 5, max = 1000) 
 	private String imagem;
 
-	@Size(min = 2, max = 30)
+	@Size(min = 2, max = 60)
 	private String relacionados;
 	
-	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
 	private List<PostagemModel> postagem;
 
@@ -75,5 +75,7 @@ public class TemaModel {
 	public void setPostagem(List<PostagemModel> postagem) {
 		this.postagem = postagem;
 	}
-	
+
+
+
 }
